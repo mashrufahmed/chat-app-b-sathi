@@ -1,4 +1,14 @@
+import type { Document } from 'mongodb';
 import mongoose from 'mongoose';
+
+export interface IUser extends Document {
+  name: string;
+  email: string;
+  emailVerified: boolean;
+  image: string;
+  isOnline: boolean;
+  lastSeen: Date;
+}
 
 const userSchema = new mongoose.Schema(
   {
