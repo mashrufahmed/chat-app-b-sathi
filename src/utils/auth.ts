@@ -46,10 +46,6 @@ export const auth = betterAuth({
     defaultCookieAttributes: {
       sameSite: 'none',
     },
-    crossSubDomainCookies: {
-      enabled: true,
-      domain: 'chat-app-b-sathi.onrender.com',
-    },
   },
   secret: process.env.BETTER_AUTH_SECRET as string,
   baseURL: process.env.BASE_URL,
