@@ -44,7 +44,11 @@ export const auth = betterAuth({
   },
   advanced: {
     defaultCookieAttributes: {
-      sameSite: 'none',
+      sameSite: 'lax', // lowercase
+      secure: true,
+      domain: undefined,
+      path: '/',
+      httpOnly: true,
     },
   },
   secret: process.env.BETTER_AUTH_SECRET as string,
