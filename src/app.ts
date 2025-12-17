@@ -8,9 +8,11 @@ const app = express();
 
 app.use(
   cors({
-    origin: process.env.ORIGIN_URL,
+    origin: process.env.ORIGIN_URL?.split(',') || ['http://localhost:3000'],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'Cookie'],
+    exposedHeaders: ['Set-Cookie'],
   })
 );
 
