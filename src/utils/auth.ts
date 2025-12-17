@@ -45,9 +45,10 @@ export const auth = betterAuth({
   advanced: {
     defaultCookieAttributes: {
       sameSite: 'none',
-      secure: true,
-      domain: undefined, // explicitly undefined rakho production e
-      path: '/',
+    },
+    crossSubDomainCookies: {
+      enabled: true,
+      domain: 'chat-app-b-sathi.onrender.com',
     },
   },
   secret: process.env.BETTER_AUTH_SECRET as string,
